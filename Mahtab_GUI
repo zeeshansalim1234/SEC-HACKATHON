@@ -1,0 +1,121 @@
+#	user profile:
+#	contains Profile photo
+# 	Location (city)
+# 	A short bio about the user
+# 	Interests and hobbies
+# 	List of friends
+# 	Posts 
+
+import tkinter as tk
+from PIL import ImageTk, Image
+
+HEIGHT = 700
+WIDTH = 700
+
+root = tk.Tk()
+root.title("Super Mario's Profile")
+
+#scrollbar = tk.Scrollbar(root)
+#scrollbar.pack(side = 'right', fill = 'y')
+
+canvas = tk.Canvas(root,height = HEIGHT, width = WIDTH)
+canvas.pack()
+
+#topleft frame
+tleft_frame = tk.Frame(root, bg = '#2890BD')
+tleft_frame.place(relx=0.0,rely= 0.0,relwidth =0.75, relheight = 0.45, anchor = 'n')
+
+#top right frame
+tright_frame = tk.Frame(root, bg = '#2890BD', bd= 10)
+tright_frame.place(relx=0.75,rely= 0,relwidth =0.8, relheight = 1, anchor = 'n')
+
+#bottom left frame
+bleft_frame = tk.Frame(root, bg = '#BDCFD6', bd=10)
+bleft_frame.place(relx = 0.5, rely = 0.45, relwidth = 1, relheight = 0.6, anchor= 'n')
+
+label_colour = '#EDEDE6'
+
+#top right labels
+
+name_label = tk.Label(tright_frame,text='Name', bg=label_colour)
+name_label.place(relx = 0.05, rely = 0.05, relwidth=0.15, relheight = 0.05 )
+
+outname_label = tk.Label(tright_frame,text= 'Super Mario' , bg=label_colour)
+outname_label.place(relx = 0.3, rely = 0.05, relwidth=0.4, relheight = 0.05)
+
+#location 
+location_label = tk.Label(tright_frame, text= 'Location', bg=label_colour)
+location_label.place(relx = 0.05, rely = 0.15, relwidth=0.15, relheight = 0.05)
+
+outlocation_label = tk.Label(tright_frame,text='Mystery Land', bg=label_colour)
+outlocation_label.place(relx = 0.3, rely = 0.15, relwidth=0.4, relheight = 0.05)
+
+#age
+age_label = tk.Label(tright_frame, text='Age',bg = label_colour)
+age_label.place(relx = 0.05, rely = 0.25,relwidth=0.1, relheight = 0.05)
+
+outage_label = tk.Label(tright_frame,text='100', bg=label_colour)
+outage_label.place(relx = 0.3, rely = 0.25, relwidth=0.4, relheight = 0.05)
+
+#interest and hobbies
+inthobb_label = tk.Label(tright_frame,text='Interest and Hobbies', bg=label_colour)
+inthobb_label.place(relx = 0.02, rely = 0.35, relwidth=0.25, relheight = 0.05)
+
+outhobb_label = tk.Label(tright_frame,text='Karting', bg=label_colour)
+outhobb_label.place(relx = 0.3, rely = 0.35, relwidth=0.4, relheight = 0.05)
+#bottom left labels
+
+#friends
+friends_label = tk.Label(bleft_frame,text='Friends', bg=label_colour)
+friends_label.place(relx = 0.05, rely = 0.05, relwidth=0.1, relheight = 0.05)
+
+outfriends_label = tk.Label(bleft_frame,text='None', bg=label_colour)
+outfriends_label.place(relx = 0.3, rely = 0.05, relwidth=0.6, relheight = 0.075)
+
+#bio
+bio_label = tk.Label(bleft_frame,text='Bio', bg=label_colour)
+bio_label.place(relx = 0.05, rely = 0.15, relwidth=0.1, relheight = 0.05)
+
+outbio_label = tk.Label(bleft_frame,text="Mario debuted as 'Jumpman' in the arcade game Donkey Kong on July 9, 1981.\n He is shown to be a carpenter and has a pet ape named Donkey Kong. \nThe carpenter mistreats the ape, who then escapes to kidnap Jumpman's girlfriend, originally known as 'the Lady' (later named Pauline).", bg=label_colour)
+outbio_label.place(relx = 0.3, rely = 0.15, relwidth=0.6, relheight = 0.2)
+
+#posts
+posts_label = tk.Label(bleft_frame,text='Posts', bg=label_colour)
+posts_label.place(relx = 0.05, rely = 0.4, relwidth=0.1, relheight = 0.05)
+
+outpost_label = tk.Label(bleft_frame,text= '', bg=label_colour)
+outpost_label.place(relx = 0.3, rely = 0.4, relwidth=0.6, relheight = 0.05)
+#import pictures
+
+profile_pic = "opp.jpeg"
+post1 = "post1.jpeg"
+post2 = "post2.jpeg"
+post3 = "opp.jpeg"
+
+#creates a tkinter compatible photo image
+
+dp = ImageTk.PhotoImage(Image.open(profile_pic))
+p1 = ImageTk.PhotoImage(Image.open(post1))
+p2 = ImageTk.PhotoImage(Image.open(post2))
+p3 = ImageTk.PhotoImage(Image.open(post3))
+
+profile_view = tk.Label(tleft_frame, image = dp)
+profile_view.place(relx = 0.5, rely = 0.2, relwidth= 0.5, relheight= 0.6)
+
+#post 1
+post1_view = tk.Label(bleft_frame,image = p1)
+post1_view.place(relx = 0.3, rely = 0.5, relwidth = 0.2, relheight= 0.4)
+
+#post 2
+post2_view = tk.Label(bleft_frame, image = p2)
+post2_view.place(relx = 0.5, rely = 0.5, relwidth = 0.2, relheight= 0.4)
+
+#post 3
+post3_view = tk.Label(bleft_frame, image = p3)
+post3_view.place(relx = 0.7, rely = 0.5, relwidth = 0.2, relheight= 0.4)
+
+#suggest friend button
+button = tk.Button(tleft_frame,text="Show friends suggestions", bg= 'gray',bd =5)
+button.place(relx=0.55, rely= 0.85, relwidth= 0.35, relheight= 0.1)
+
+root.mainloop()
