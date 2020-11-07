@@ -6,8 +6,8 @@ Tools used: Python 3.9, Tkinter
 
 Description:
 
+Social media platform for viewing friends profiles
 
-How it works:
 
 Prerequisites:
 Things you need to install before running:
@@ -15,5 +15,4 @@ Things you need to install before running:
 2. Import future
 
 What's next for us?
-
 Adding features to live chat with friends
