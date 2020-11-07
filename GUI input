@@ -1,0 +1,113 @@
+from tkinter import *
+
+
+def save_info():
+
+    firstentry_info = firstentry.get()
+    secondentry_info = secondentry.get()
+    thirdentry_info = thirdentry.get()
+    fourthentry_info = fourthentry.get()
+    fifthentry_info = fifthentry.get()
+    sixthentry_info = sixthentry.get()
+    seventhentry_info = sixthentry.get()
+    eighthentry_info = sixthentry.get()
+    ninthentry_info = sixthentry.get()
+    tenthentry_info = sixthentry.get()
+
+
+
+    print(firstentry_info, secondentry_info, thirdentry_info)
+
+    file = open("user.txt", "a")
+
+    file.write(str(firstentry_info)+" ")
+    file.write(str(secondentry_info)+" ")
+    file.write(str(thirdentry_info)+" ")
+    file.write(str(fourthentry_info) + " ")
+    file.write(str(fifthentry_info) + " ")
+    file.write(str(sixthentry_info)+" ")
+    file.write(str(seventhentry_info) + " ")
+    file.write(str(eighthentry_info) + " ")
+    file.write(str(ninthentry_info) + " ")
+    file.write(str(tenthentry_info) + " \n")
+    #file.write("\n")
+
+
+    file.close()
+app = Tk()
+
+app.geometry("1200x1200")
+
+app.title("Social networking page")
+
+app.configure(background="lightblue")
+
+heading = Label(text="Network with your friends",fg="black",bg="blue",width="500",height="3",font="10")
+
+heading.pack()
+
+firstentry_text = Label(text="Name")
+secondentry_text = Label(text="Email Address")
+thirdentry_text = Label(text="Password")
+fourthentry_text =Label(text="Date of Birth")
+fifthentry_text =Label(text="Location:")
+sixthentry_text = Label(text="Postal Address")
+seventhentry_text = Label(text="BIO:")
+eighthentry_text = Label(text="High School/ University details")
+ninthentry_text = Label(text="Work(Company Name)")
+tenthentry_text = Label(text="Interest and Hobbies")
+
+firstentry_text.place(x=15,y=80)
+secondentry_text.place(x=15,y=140)
+thirdentry_text.place(x=15,y=200)
+fourthentry_text.place(x=15,y=260)
+fifthentry_text.place(x=400,y=80)
+sixthentry_text.place(x=400,y=140)
+seventhentry_text.place(x=400,y=200)
+eighthentry_text.place(x=400,y=260)
+ninthentry_text.place(x=400,y=320)
+tenthentry_text.place(x=400,y=380)
+
+
+firstentry = StringVar()
+secondentry = StringVar()
+thirdentry = StringVar()
+fourthentry= StringVar()
+fifthentry= StringVar()
+sixthentry= StringVar()
+seventhentry=StringVar()
+eighthentry=StringVar()
+ninthentry=StringVar()
+tenthentry=StringVar()
+
+
+firstentry_enter = Entry(textvariable=firstentry,width="30")
+secondentry_enter = Entry(textvariable=secondentry,width="30")
+thirdentry_enter = Entry(textvariable=thirdentry,width="30")
+fourthentry_enter = Entry(textvariable=fourthentry,width="30")
+fifthentry_enter = Entry(textvariable=fifthentry,width="30")
+sixthentry_enter = Entry(textvariable=sixthentry,width="30")
+seventhentry_enter= Entry(textvariable=seventhentry,width="30")
+eighthentry_enter= Entry(textvariable=eighthentry,width="30")
+ninthentry_enter= Entry(textvariable=ninthentry,width="30")
+tenthentry_enter= Entry(textvariable=tenthentry,width="30")
+
+
+firstentry_enter.place(x=15,y=100)
+secondentry_enter.place(x=15,y=160)
+thirdentry_enter.place(x=15,y=220)
+fourthentry_enter.place(x=15,y=280)
+fifthentry_enter.place(x=400,y=100)
+sixthentry_enter.place(x=400,y=160)
+seventhentry_enter.place(x=400,y=220)
+eighthentry_enter.place(x=400,y=280)
+ninthentry_enter.place(x=400,y=340)
+tenthentry_enter.place(x=400,y=400)
+
+
+button1 = Button(app,text="Next",command=save_info,width="30",height="2",bg="cyan")
+button1.place(x=15,y=500)
+
+button2 = Button(app,text="Profile Picture",width="30",height="10",bg="cyan")
+button2.place(x=700,y=80)
+mainloop()
