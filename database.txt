@@ -1,0 +1,43 @@
+							 DATA BASE FOR SOCIAL NETWORKING WEBSITE
+
+								 1.Registeration info
+ 
+1.Name:
+
+2.Email Address:
+
+3.Password:
+
+4.Date of Birth:
+
+
+								    2.Login info
+
+1.Email Address:
+
+2.Password:
+
+
+								    3. Users Data
+
+1.Location:
+
+2.Bio:
+
+3.Pic:
+
+4.High School/University:
+
+5.Work(company name):
+
+6.Interest and hobbies:
+
+7.Post:
+
+
+								     
+
+
+
+
+
